@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --primary-color: #767171;
+    --primary-color-dark: #767171;
+    --secondary-color: #ca8a04;
+    --text-dark: #1f2937;
+    --text-light: #767171;
+    --max-width: 1200px;
+  }
+  
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+body{
+    background: #000116 !important;
+    font-family: "Poppins", sans-serif;
+}
+
+header{
+    z-index: 999;
+    position: fixed;
+    width: 100%;
+}
+
+header .nav-bar{
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    height: 4em;
+    border-bottom: 1 px solid rgba(255, 255, 255, 0.1) ;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 150px;
+    transition: 0.5s ease;
+
+}
+
+.nav-bar .logo{
+    color: #ffff;
+    font-size: 1.8em;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.navigation .nav-items a{
+    color: #ffff;
+    font-size: lem;
+    text-decoration: none;
+}
+
+.navigation .nav-items a:not(:last-child){
+    margin-right: 45px;
+}
+
+.navigation .nav-items a i{
+    display: none;
+}
+
+::-webkit-scrollbar{
+    background: #ffff;
+    width: 11px;
+    border-radius: 2em;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #262c49;
+    width: 100%;
+    border-radius: 2em;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: #454f6d;
+}
+
+.scroll-indicator{
+    width: 100%;
+    height: 5px;
+}
+
+.scroll-indicator-bar{
+    background: #E6ED07;
+    width: 0%;
+    height: 100%;
+    box-shadow: 0 5px 25px #E6ED07,
+                0 5px 50px #E6ED07;
+
+}
+.nav-close-btn, .nav-menu-btn{
+    display: none;
+}
+
+.section {
+    background-color: var(--extra-light);
+  }
+  
+  .section__container {
+    min-height: 100vh;
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .subtitle {
+    letter-spacing: 2px;
+    color: var(--text-light);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    font-weight: 400;
+    line-height: 3rem;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+  
+  .title span {
+    font-weight: 600;
+  }
+  
+  .description {
+    line-height: 1.5rem;
+    color: #fff;
+    margin-bottom: 2rem;
+  }
+  
+  .action__btns {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .action__btns button {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 1rem 2rem;
+    outline: none;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  
+  .pgweb {
+    background-color: #FFDC80;
+    color: #000000;
+  }
+  
+  .pgweb:hover {
+    background-color: rgb(246, 227, 181);
+  }
+  
+  .facebook {
+    color: #ffffff;
+    background-color: #4267B2 ;
+  }
+  
+  .facebook:hover {
+    background-color: #90aadf  ;
+    color: #020202 ;
+  }
+
+  .instagram {
+    background-color: #C13584;
+    color: #ffffff;;
+  }
+  
+  .instagram:hover {
+    background-color: #833AB4;
+  }
+  
+  .image {
+    display: grid;
+    place-items: center;
+  }
+  
+  .image img {
+    width: min(25rem, 100%);
+    border-radius: 100%;
+  }
+
+  footer {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+  
+  @media (width < 750px) {
+    nav .checkbox {
+      display: block;
+    }
+  
+    ul {
+      position: absolute;
+      width: 100%;
+      height: calc(100vh - 85px);
+      left: -100%;
+      top: 85px;
+      background-color: var(--extra-light);
+      flex-direction: column;
+      justify-content: center;
+      gap: 3rem;
+    }
+  
+    nav #check:checked ~ ul {
+      left: 0;
+    }
+  
+    ul li a {
+      font-size: 1.25rem;
+    }
+  
+    .section__container {
+      padding: 10rem 1rem 5rem 1rem;
+      text-align: center;
+      grid-template-columns: repeat(1, 1fr);
+    }
+  
+    .image {
+      grid-area: 1/1/2/2;
+    }
+  
+    .action__btns {
+      margin: auto;
+    }
+  }
+
+
+@media screen and (max-width: 1100px){
+    header .nav-bar{
+        padding: 0 50px;
+    }
+}
+
+@media screen and (max-width: 850px){
+    header .nav-bar{
+        padding: 0 20px;
+    }
+    .nav-menu-btn{
+        display: block;
+        color: #ffff;
+        font-size: 1.5em;
+        cursor: pointer;
+    }
+    .navigation{
+        z-index: 99999;
+        position: fixed;
+        background: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        visibility: hidden;
+        opacity: 0;
+        transition: 0s ease;
+    }
+    .navigation.active{
+        visibility: visible;
+        opacity: 1;
+        transition: 0.3s ease;
+
+    }
+    .navigation .nav-items{
+        position: relative;
+        background: #ffff;
+        width: 400px;
+        max-width: 400px;
+        display: grid;
+        place-content: center;
+        margin: 20px;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.8);
+        transform: translateY(-200px);
+        transition: 0.3s ease;
+    }
+    .navigation.active .nav-items{
+        transform: translateY(0);
+
+    }
+    .navigation .nav-items a{
+        color: #222;
+        font-size: 1em;
+        margin: 15px 50px;
+    }
+    .navigation .nav-items a i{
+        display: inline-block;
+        font-size: 1.2em;
+        margin-right: 5px;
+    }
+    .nav-close-btn{
+        display: block;
+        color: #222;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 1.3em;
+        margin: 10px;
+        cursor: pointer;
+
+    }
+
+
+}
