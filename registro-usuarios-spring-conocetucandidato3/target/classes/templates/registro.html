@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://i.ibb.co/wNsG0ZD/Conoce-Tu-Candidato-Logs.png" type="image/png">
+
+<head>
+	<meta charset="utf-8">
+	<title>Registro | Conoce Tu Candidato</title>
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release-pro/v4.0.0/css/line.css">
+		</head>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+}
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #000116 !important;
+
+}
+
+header{
+    top: 0;
+    z-index: 999;
+    position: fixed;
+    width: 100%;
+}
+
+header .nav-bar{
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    height: 4em;
+    border-bottom: 1 px solid rgba(255, 255, 255, 0.1) ;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 150px;
+    transition: 0.5s ease;
+
+}
+
+.nav-bar .logo{
+    color: #ffff;
+    font-size: 1.8em;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.navigation .nav-items a{
+    color: #ffff;
+    font-size: lem;
+    text-decoration: none;
+}
+
+.navigation .nav-items a:not(:last-child){
+    margin-right: 45px;
+}
+
+.navigation .nav-items a i{
+    display: none;
+}
+  
+.container {
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 40px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 70px; 
+}
+
+  
+  .logo img {
+    width: 60%;
+    max-width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+
+h1 {
+    color:#333;
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+  
+  .form-group {
+    padding: 5px;
+    margin: 15px 0; 
+  }
+  
+  .form-group label {
+    padding: 10px;
+    display: block;
+    color: black;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input {
+    width: calc(100% - 10px);
+    background-color: #262c49;
+    color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .form-group input::placeholder{
+    color: #fff;
+  }
+  
+  .form-group input:focus {
+    outline: none;
+    border: #333 solid 2px;
+  }
+  .form-group select {
+    width: calc(100% - 10px);
+    background-color: #262c49;
+    color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group select:focus {
+    outline: none;
+    border: #333 solid 2px;
+}
+  .register-link {
+    margin-top: 20px;
+  }
+  
+  .register-link a {
+    text-decoration: none;
+    color: #262c49;
+    transition: color 0.3s ease;
+  }
+  
+  .register-link a:hover {
+    color: #262c49;
+    text-decoration: underline;
+  }
+
+button {
+    padding: 10px 20px;
+    background-color: #262c49;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #454f6d;
+}
+
+::-webkit-scrollbar{
+    background: #ffff;
+    width: 11px;
+    border-radius: 2em;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #262c49;
+    width: 100%;
+    border-radius: 2em;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: #454f6d;
+}
+
+.scroll-indicator{
+    width: 100%;
+    height: 5px;
+}
+
+.scroll-indicator-bar{
+    background: #E6ED07;
+    width: 0%;
+    height: 100%;
+    box-shadow: 0 5px 25px #E6ED07,
+                0 5px 50px #E6ED07;
+
+}
+.nav-close-btn, .nav-menu-btn{
+    display: none;
+}
+
+@media screen and (max-width: 1100px){
+    header .nav-bar{
+        padding: 0 50px;
+    }
+}
+
+@media screen and (max-width: 850px){
+    header .nav-bar{
+        padding: 0 20px;
+    }
+    .nav-menu-btn{
+        display: block;
+        color: #ffff;
+        font-size: 1.5em;
+        cursor: pointer;
+    }
+    .navigation{
+        z-index: 99999;
+        position: fixed;
+        background: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        visibility: hidden;
+        opacity: 0;
+        transition: 0s ease;
+    }
+    .navigation.active{
+        visibility: visible;
+        opacity: 1;
+        transition: 0.3s ease;
+
+    }
+    .navigation .nav-items{
+        position: relative;
+        background: #ffff;
+        width: 400px;
+        max-width: 400px;
+        display: grid;
+        place-content: center;
+        margin: 20px;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.8);
+        transform: translateY(-200px);
+        transition: 0.3s ease;
+    }
+    .navigation.active .nav-items{
+        transform: translateY(0);
+
+    }
+    .navigation .nav-items a{
+        color: #222;
+        font-size: 1em;
+        margin: 15px 50px;
+    }
+    .navigation .nav-items a i{
+        display: inline-block;
+        font-size: 1.2em;
+        margin-right: 5px;
+    }
+    .nav-close-btn{
+        display: block;
+        color: #222;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 1.3em;
+        margin: 10px;
+        cursor: pointer;
+
+    }
+
+
+}
+
+
+@media (max-width: 767px) {
+	    .container {
+        padding: 10px;
+        max-width: 100%; 
+    }
+
+    h1 {
+        font-size: 20px; 
+        margin-bottom: 15px; 
+    }
+
+    .form-group label {
+        padding: 5px;
+        font-size: 14px; 
+    }
+
+    .form-group input {
+        font-size: 14px;
+    }
+    }
+</style>
+
+<body>
+  <header>
+    <div class="nav-bar">
+        <a href="" class="logo">CONOCE TU CANDIDATO</a>
+        <div class="navigation">
+            <div class="nav-items">
+                <i class="uil uil-times nav-close-btn"></i>
+                <a href="../../../Videos/Conoce Tu Candidato Neiva/inicio.html"><i class="uil uil-home"></i>Inicio</a>
+                <a href="http://localhost:8082/login"><i class="uil uil-user-check"></i>Ingresar</a>
+                <a href="http://localhost:8082/registro"><i class="uil uil-user-plus"></i>Registrarse</a>           
+                <a href="../../../Videos/Conoce Tu Candidato Neiva/CandidatosDef.html"><i class="uil uil-users-alt"></i>Candidatos</a>
+                <a href="#"><i class="uil uil-user-exclamation"></i>Votar</a>
+
+            </div>
+        </div>
+        <i class="uil uil-apps nav-menu-btn"></i>
+    </div>
+    <div class="scroll-indicator">
+        <div class="scroll-indicator-bar"></div>
+    </div>
+</header>
+
+    <div class="container">
+        <div th:if=${param.exito}>
+            <div class="alert alert-info">Su voto se ha registrado satisfactoriamente</div>
+        </div>
+
+        <h1>Regístrate</h1>
+        <div class="logo">
+          <img src="https://i.ibb.co/wNsG0ZD/Conoce-Tu-Candidato-Logs.png" alt="Logo" border="0" />
+        <form th:action="@{/registro}" method="post" th:object="${usuario}" onsubmit="return validarFormulario();">
+            <div class="form-group">
+                <label class="control-label" for="nombre">Nombre:</label>
+                <input id="nombre" type="text" class="form-control" th:field="*{nombre}" required autofocus="autofocus">
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" for "apellido">Apellido:</label>
+                <input id="apellido" class="form-control" th:field="*{apellido}" required autofocus="autofocus">
+            </div>
+
+            <div class="form-group">
+				<label class="control-label" for="candidato">Candidato de su preferencia:</label>
+				<select id="candidato" class="form-control" th:field="*{candidato}" required autofocus="autofocus">
+                    <option value="">Seleccione un candidato</option>
+					<option value="Amin">Edinson Amin Losada</option>
+					<option value="Dagoberto">Dagoberto Marín Fernandez</option>
+					<option value="Casagua">German Casagua Bonilla</option>
+					<option value="Chicho">Germán Dario Rodriguez</option>
+					<option value="Botello">Héctor Javier Osorio</option>
+					<option value="Jorge">Jorge Andrés Gechem</option>
+					<option value="Wilker">Wilker Esneider Bautista</option>
+					<option value="Wilmar">Wilmar Eli Charry</option>
+					<option value="Yilber">Yilber Leandro Saavedra</option>
+
+				</select>
+			</div>
+
+            <div class="form-group">
+                <label class="control-label" for="email">Email:</label>
+                <input id="email" type="email" class="form-control" th:field="*{email}" required autofocus="autofocus">
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" for="password">Password:</label>
+                <input type="password" id="password" class="form-control" th:field="*{password}" required autofocus="autofocus">
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-success" >Registrar</button>
+                <br>
+                <span>Si estás registrado <a th:href="@{/login}" style="text-decoration: none; color: #575050; transition: color 0.3s ease;">inicia sesión aquí</a></span>
+            </div>
+          </div>
+        </form>
+    </div>
+</body>
+
+<script>
+  window.addEventListener("scroll", () => {
+const indicatorBar = document.querySelector(".scroll-indicator-bar");
+const pageScroll = document.body.scrollTop || document.documentElement.scrollTop;
+const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+const scrollValue = (pageScroll / height) * 100;
+
+indicatorBar.style.width = scrollValue + "%";
+});
+
+const menuBtn = document.querySelector(".nav-menu-btn");
+const closeBtn = document.querySelector(".nav-close-btn");
+const navigation = document.querySelector(".navigation");
+
+menuBtn.addEventListener("click", () =>{
+navigation.classList.add("active");
+});
+
+closeBtn.addEventListener("click", () =>{
+navigation.classList.remove("active");
+})
+
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+<script>
+    var nombreRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s-]{2,}$/;
+    var apellidoRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s-]{2,}$/;
+    var emailRegex = /^([a-z0-9_\.\+-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+
+
+    function validarFormulario() {
+        var nombre = document.getElementById("nombre").value;
+        var apellido = document.getElementById("apellido").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+
+        if (!nombre.match(nombreRegex)) {
+            alert("El nombre es inválido.");
+            return false;
+        }
+
+        if (!apellido.match(apellidoRegex)) {
+            alert("El apellido es inválido.");
+            return false;
+        }
+
+        if (!email.match(emailRegex)) {
+            alert("El correo electrónico es inválido.");
+            return false;
+        }
+
+         if (!password.match(passwordRegex)) {
+        alert("La contraseña debe tener:\n" +
+            "Mínimo 8 caracteres\n" +
+            "Al menos una letra mayúscula\n" +
+            "Al menos una letra minúscula\n" +
+            "Al menos un dígito\n" +
+            "No espacios en blanco\n" +
+            "Al menos 1 caracter especial: $@$!%*?&");
+        return false;
+    }
+
+        return true;
+    }
+</script>
+
+</body>
+
+</html>
