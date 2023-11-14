@@ -415,6 +415,8 @@ navigation.classList.remove("active");
     var nombreRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s-]{2,}$/;
     var apellidoRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s-]{2,}$/;
     var emailRegex = /^([a-z0-9_\.\+-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+    var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,}$/;
+
 
 
     function validarFormulario() {
